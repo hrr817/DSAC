@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include "./libqueue/IntQueue.c"
+#include "./libqueue/Queue.c"
 
 int main() {
-  IntQueue *myqueue = create_queue(5);
-
+  Queue *myqueue = create_queue(5);
+  
   printf("Queue:\n");
   printf("-> Size: %d\n", myqueue->size);
   printf("-> Last: %d\n", myqueue->last);

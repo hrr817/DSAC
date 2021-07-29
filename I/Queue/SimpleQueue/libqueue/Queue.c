@@ -1,15 +1,14 @@
 #include <stdlib.h>
-#include "./IntQueue.h"
+#include "./Queue.h"
 
-
-typedef struct _int_queue {
+typedef struct _queue {
   int last;
   int size;
   int* elements;
-} IntQueue;
+} Queue;
 
-IntQueue* create_queue(int size){
-  IntQueue *ptr = (IntQueue*)malloc(sizeof(IntQueue));
+Queue* create_queue(int size){
+  Queue *ptr = (Queue*)malloc(sizeof(Queue));
   ptr->last = -1;
   ptr->size = size;
   ptr->elements = (int*)malloc(ptr->size * sizeof(int));
@@ -21,7 +20,7 @@ IntQueue* create_queue(int size){
   return ptr;
 }
 
-int enqueue(int num, IntQueue *ptr) {
+int enqueue(int num, Queue *ptr) {
   if(ptr->last == ptr->size) {
     return 1;
   }
@@ -33,7 +32,7 @@ int enqueue(int num, IntQueue *ptr) {
   return 0;
 }
 
-int dequeue(IntQueue *ptr) {
+int dequeue(Queue *ptr) {
   if(ptr->last == -1) {
     return -1;
   }
@@ -56,7 +55,7 @@ int dequeue(IntQueue *ptr) {
   return ele;
 }
 
-int is_empty(IntQueue *ptr){
+int is_empty(Queue *ptr){
   if(ptr->last == -1) {
     return 1;
   }
@@ -64,7 +63,7 @@ int is_empty(IntQueue *ptr){
   return 0;
 }
 
-int is_full(IntQueue *ptr) {
+int is_full(Queue *ptr) {
   if(ptr->last == ptr->size) {
     return 1;
   }
@@ -72,7 +71,7 @@ int is_full(IntQueue *ptr) {
   return 0;
 }
 
-int peek(IntQueue *ptr) {
+int peek(Queue *ptr) {
   if(ptr->last == -1) {
     return -1;
   }
