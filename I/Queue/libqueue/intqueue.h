@@ -30,11 +30,10 @@ int enqueue(int num, IntQueue *ptr);
 
 /**
  *  Dequeues a first element (inserted order) from given queue
- *  @param num type: int, to be queued
  *  @param ptr type: *IntQueue, pointer of IntQueue
  *  @returns -1 if no queue is empty, first element (int)
  */
-int dequeue(int num, IntQueue *ptr);
+int dequeue(IntQueue *ptr);
 
 /**
  *  Checks if the given IntQueue is empty

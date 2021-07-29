@@ -26,12 +26,14 @@ int enqueue(int num, IntQueue *ptr) {
     return 1;
   }
 
-  ptr->last = 0;
+  if(ptr->last == -1) {
+    ptr->last = 0;
+  }
   ptr->elements[ptr->last++] = num;
   return 0;
 }
 
-int dequeue(int num, IntQueue *ptr) {
+int dequeue(IntQueue *ptr) {
   if(ptr->last == -1) {
     return -1;
   }
@@ -52,4 +54,28 @@ int dequeue(int num, IntQueue *ptr) {
 
   ptr->last--;
   return ele;
+}
+
+int is_empty(IntQueue *ptr){
+  if(ptr->last == -1) {
+    return 1;
+  }
+  
+  return 0;
+}
+
+int is_full(IntQueue *ptr) {
+  if(ptr->last == ptr->size) {
+    return 1;
+  }
+
+  return 0;
+}
+
+int peek(IntQueue *ptr) {
+  if(ptr->last == -1) {
+    return -1;
+  }
+
+  return ptr->elements[0];
 }
