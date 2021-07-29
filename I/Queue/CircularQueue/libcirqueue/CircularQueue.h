@@ -1,6 +1,6 @@
 /**
  ********************************* 
- * Applications of Circular Queue
+ * Applications of Circular Queue:
  * CPU scheduling
  * Memory management
  * Traffic Management
@@ -12,6 +12,7 @@
  * Members
  * @start:    type: int,  starting of queue
  * @end:      type: int,  ending of queue
+ * @size:     type: int,  size of array
  * @elements: type: int*, array of int
  */
  typedef struct _cir_queue CircularQueue;
