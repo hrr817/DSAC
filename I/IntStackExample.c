@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./lib/intstack.c"
+#include "./libstack/intstack.c"
 
 int main() {
   IntStack* mystack = create_stack();
