@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./libqueue/intqueue.c"
+#include "./libqueue/IntQueue.c"
 
 int main() {
   IntQueue *myqueue = create_queue(5);
@@ -47,5 +47,4 @@ int main() {
   for (int i = 0; i < myqueue->last; i++) {
     printf("%d\n", myqueue->elements[i]);
   }
-
 }

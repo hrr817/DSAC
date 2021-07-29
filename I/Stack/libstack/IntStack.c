@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "./intstack.h"
+#include "./IntStack.h"
 
 typedef struct _int_stack {
   int top;

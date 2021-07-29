@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "./intqueue.h"
+#include "./IntQueue.h"
 
 
 typedef struct _int_queue {
