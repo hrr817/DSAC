@@ -1,4 +1,3 @@
-#include <bits/pthreadtypes.h>
 #include <stdio.h>
 #include "./libcirqueue/CircularQueue.c"
 
