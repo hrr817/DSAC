@@ -34,9 +34,9 @@ int pq_is_full(PriorityQueue *ptr) {
   return 0;
 }
 
-void bubble_up(PriorityQueue *ptr) {
+int bubble_up(PriorityQueue *ptr) {
   if(ptr->last < 2) {
-    return;
+    return -1;
   }
 
   for(int i = ptr->last; i > 0; i--) {
@@ -63,4 +63,33 @@ int pq_enqueue(int num, int p, PriorityQueue *ptr) {
   ptr->last++;
   bubble_up(ptr);
   return 0;
+}
+
+int pq_is_empty(PriorityQueue *ptr) {
+  if(ptr->last == -1) {
+    return 1;
+  }
+
+  return 0;
+};
+
+int pq_dequeue(PriorityQueue *ptr) {
+  if(pq_is_empty(ptr)) {
+    return -1;
+  }
+  int v = ptr->nodes[ptr->last - 1].v;
+  ptr->last--;
+
+  if(ptr->last == 0) {
+    ptr->last = -1;
+  }
+  return v;
+}
+
+int pq_peek(PriorityQueue *ptr) {
+  if(ptr->last == -1) {
+    return -1;
+  }
+
+  return ptr->nodes[ptr->last - 1].v;
 }
