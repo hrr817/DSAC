@@ -21,6 +21,14 @@ typedef struct _pqueue PriorityQueue;
 PriorityQueue* create_pq(int size);
 
 /**
+ *  Sorts the last element in Priority Queue
+ *  to suitable place according its priority
+ *  @param ptr type: *Queue, pointer of Queue
+ *  @returns -1 if no queue is empty
+ */
+int bubble_up(PriorityQueue *ptr);
+
+/**
  *  Queues a given number to given queue
  *  @param num type: int, to be queued
  *  @param p   type: int, priority
