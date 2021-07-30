@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "./PriorityQueue.h"
 typedef struct _node {
   int v;
@@ -39,10 +40,10 @@ void bubble_up(PriorityQueue *ptr) {
   }
 
   for(int i = ptr->last; i > 0; i--) {
-    if(ptr->nodes[ptr->last - 1].p < ptr->nodes[ptr->last].p) {
-      const Node temp = ptr->nodes[ptr->last];
-      ptr->nodes[ptr->last] = ptr->nodes[ptr->last - 1];
-      ptr->nodes[ptr->last - 1] = temp;
+    if(ptr->nodes[i - 1].p < ptr->nodes[i].p) {
+      const Node temp = ptr->nodes[i];
+      ptr->nodes[i] = ptr->nodes[i - 1];
+      ptr->nodes[i - 1] = temp;
     }
   }
 }
