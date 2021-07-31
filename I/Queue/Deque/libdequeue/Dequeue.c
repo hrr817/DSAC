@@ -7,6 +7,10 @@ typedef struct _dequeue {
   int* elements;
 } Dequeue;
 
+int mod(int x, int m) {
+    return (x%m + m)%m;
+}
+
 Dequeue* create_dequeue(int size) {
   Dequeue *ptr = (Dequeue*)malloc(sizeof(Dequeue));
   ptr->size = size;
@@ -22,7 +26,7 @@ Dequeue* create_dequeue(int size) {
 }
 
 int dq_is_full(Dequeue *ptr) {
-  if(ptr->start == ((ptr->end + 1) % ptr->size)) {
+  if(ptr->start == (mod((ptr->end + 1), ptr->size))) {
     return 1;
   }
 
@@ -47,9 +51,7 @@ int dq_enqueue_start(int num, Dequeue *ptr) {
     ptr->end = 0;
   }
 
-  ptr->start = (ptr->start - 1) % ptr->size;
-  printf("%d\n", (ptr->start - 1));
-
+  ptr->start = mod((ptr->start - 1), ptr->size);
   ptr->elements[ptr->start] = num;
   return 0;
 }
@@ -61,10 +63,9 @@ int dq_enqueue_end(int num, Dequeue *ptr) {
 
   if(ptr->start == -1 && ptr->end == -1) {
     ptr->start = 0;
-    ptr->end = 0;
   }
 
-  ptr->end = (ptr->end + 1) % ptr->size;
+  ptr->end = mod((ptr->end + 1), ptr->size);
   ptr->elements[ptr->end] = num;
   return 0;
 }
@@ -81,7 +82,7 @@ int dq_dequeue_start(Dequeue *ptr) {
     ptr->start = -1;
     ptr->end = -1;
   } else {
-    ptr->start = (ptr->start + 1) % ptr->size; // move start index one step
+    ptr->start = mod((ptr->start + 1), ptr->size); // move start index one step
   }
 
   return temp;
@@ -92,14 +93,14 @@ int dq_dequeue_end(Dequeue *ptr) {
     return 1;
   }
 
-  int temp = ptr->elements[ptr->start]; // save value to return
-  ptr->elements[ptr->start] = 0; // remove value
+  int temp = ptr->elements[ptr->end]; // save value to return
+  ptr->elements[ptr->end] = 0; // remove value
 
   if(ptr->start == ptr->end) { // only one item reset queue
     ptr->start = -1;
     ptr->end = -1;
   } else {
-    ptr->start = (ptr->start + 1) % ptr->size; // move start index one step
+    ptr->end = mod((ptr->end - 1), ptr->size); // move end index one step back
   }
 
   return temp;
@@ -118,5 +119,5 @@ int dq_get_end(Dequeue *ptr) {
     return 1;
   }
 
-  return ptr->elements[ptr->start];
+  return ptr->elements[ptr->end];
 }
