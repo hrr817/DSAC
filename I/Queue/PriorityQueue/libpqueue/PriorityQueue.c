@@ -46,6 +46,8 @@ int bubble_up(PriorityQueue *ptr) {
       ptr->nodes[i - 1] = temp;
     }
   }
+
+  return 0;
 }
 
 int pq_enqueue(int num, int p, PriorityQueue *ptr) {

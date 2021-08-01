@@ -1,5 +1,5 @@
 /**
- *  Struture for Queue
+ *  Struture for Priority Queue's Node
  *  @v:    type: int, value (value set by user)
  *  @p:    type: int, priority (position in queue)
  */
