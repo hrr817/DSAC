@@ -1,12 +1,12 @@
 /**
- *  Struture for Queue
+ *  Struture for Priority Queue's Node
  *  @v:    type: int, value (value set by user)
  *  @p:    type: int, priority (position in queue)
  */
 typedef struct _node Node;
 
 /**
- *  Struture for Priority Queue
+ *  Struture for Priority Queue using Binary heaps, enqueue and dequeue is O log n
  *  @size:       type: int (number of elements that can be stored given at the time of creation)
  *  @last:       type: int (index of newly added element)
  *  @elements:   type: Node* (elements)
