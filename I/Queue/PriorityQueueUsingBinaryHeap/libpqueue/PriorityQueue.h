@@ -29,6 +29,14 @@ PriorityQueue* create_pq(int size);
 void bubble_up(PriorityQueue *ptr);
 
 /**
+ *  Sorts the first element in Priority Queue
+ *  to suitable place according its priority
+ *  @param ptr type: *Queue, pointer of Queue
+ *  @returns -1 if no queue is empty
+ */
+void sink_down(PriorityQueue *ptr);
+
+/**
  *  Queues a given number to given queue
  *  @param num type: int, to be queued
  *  @param p   type: int, priority

@@ -134,5 +134,5 @@ int pq_peek(PriorityQueue *ptr) {
     return -1;
   }
 
-  return ptr->nodes[ptr->last - 1].v;
+  return ptr->nodes[0].v;
 }
