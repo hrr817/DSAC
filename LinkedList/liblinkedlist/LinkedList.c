@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "./LinkedList.h"
 
 typedef struct _node {
@@ -7,18 +8,28 @@ typedef struct _node {
 } Node; 
 
 typedef struct _linked_list {
-  int start;
-  int end;
+  Node *head;
+  Node *tail;
 } LinkedList;
 
 LinkedList* create_linkedlist(){
   LinkedList *ptr = (LinkedList*)malloc(sizeof(LinkedList));
-  ptr->start = -1;
-  ptr->end = -1;
-
+  if(ptr == NULL) {
+    // handle errors
+  }
   return ptr;
 }
 
 int push(int num, LinkedList *ptr) {
- return 0;
+  Node *newNode = (Node*)malloc(sizeof(Node));
+  newNode->value = num;
+
+  if(ptr->head == NULL) {
+    ptr->head = newNode;
+    ptr->tail = newNode;
+  } else {
+    ptr->tail->next = newNode;
+    ptr->tail = newNode;
+  }
+  return 0;
 }

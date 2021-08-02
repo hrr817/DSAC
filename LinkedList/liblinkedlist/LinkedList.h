@@ -1,7 +1,7 @@
 /**
  * Structure for LinkedList
  * @value: type: int, integer
- * @next: type: *int, pointer of next integer
+ * @next: type: *Node, pointer of next integer
  */
 typedef struct _node Node; 
 

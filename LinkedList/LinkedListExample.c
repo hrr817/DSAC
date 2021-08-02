@@ -3,36 +3,30 @@
 
 int main() {
   LinkedList* mylist = create_linkedlist();
+  push(10, mylist);
+  push(20, mylist);
+  push(30, mylist);
+  push(40, mylist);
 
   printf("Linked List:\n");
-  printf("-> top: %d\n", mylist->start);
-  printf("-> size: %d\n", mylist->end);
+  printf("-> top: %p\n", mylist->head->next);
+  printf("-> top: %d\n", mylist->head->value);
+  printf("-> tail: %p\n", mylist->tail->next);
+  printf("-> tail: %d\n", mylist->tail->value);
 
-  // printf("---> pushing 15 elements...\n");
-  // for (int i = 1; i <= 15; i++) {
-  //   push(i * 1, mystack);
-  // }
 
-  // printf("Stack:\n");
-  // printf("-> top: %d\n", mystack->top);
-  // printf("-> size: %d\n", mystack->size);
-  // printf("-> peek: %d\n", peek(mystack));
-  // printf("Elements: \n");
+  printf("Elements:\n");
+  Node *nextNode = mylist->head;
+  while(nextNode != NULL) {
+    printf("%d\n", nextNode->value);
+    nextNode = nextNode->next;
+  }
 
-  // for (int i = 0; i < mystack->size; i++) {
-  //   printf("%d\n", mystack->elements[i]);
-  // }
+  printf("----------------------------\n");
 
-  // printf("---> popping...\n");
-  // printf("Popped element: %d\n", pop(mystack));
-
-  // printf("Stack:\n");
-  // printf("-> top: %d\n", mystack->top);
-  // printf("-> size: %d\n", mystack->size);
-  // printf("-> peek: %d\n", peek(mystack));
-  // printf("Elements: \n");
-
-  // for (int i = 0; i < mystack->size; i++) {
-  //   printf("%d\n", mystack->elements[i]);
-  // }
+  printf("Linked List:\n");
+  printf("-> top: %p\n", mylist->head->next);
+  printf("-> top: %d\n", mylist->head->value);
+  printf("-> tail: %p\n", mylist->tail->next);
+  printf("-> tail: %d\n", mylist->tail->value);
 }
