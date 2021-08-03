@@ -3,17 +3,18 @@
 
 int main() {
   LinkedList* mylist = create_linkedlist();
-  push(10, mylist);
-  push(20, mylist);
-  push(30, mylist);
-  push(40, mylist);
 
-  printf("Linked List:\n");
-  printf("-> top: %p\n", mylist->head->next);
+  printf("Pushing numbers to linked list\n");
+  for (int i = 1; i <= 5; i++) {
+    printf("Pushing, %d...\n", i * 10);
+    push(i * 10, mylist);
+  }
+
+  printf("\nLinked List:\n");
+  printf("-> top: %p\n", mylist->head);
   printf("-> top: %d\n", mylist->head->value);
-  printf("-> tail: %p\n", mylist->tail->next);
+  printf("-> tail: %p\n", mylist->tail);
   printf("-> tail: %d\n", mylist->tail->value);
-
 
   printf("Elements:\n");
   Node *nextNode = mylist->head;
@@ -21,12 +22,22 @@ int main() {
     printf("%d\n", nextNode->value);
     nextNode = nextNode->next;
   }
-
   printf("----------------------------\n");
+  printf("Popping, %d...\n", pop(mylist));
+  printf("Popping, %d...\n", pop(mylist));
+  printf("Shifting, %d...\n", shift(mylist));
+  printf("Shifting, %d...\n", shift(mylist));
 
-  printf("Linked List:\n");
-  printf("-> top: %p\n", mylist->head->next);
+  printf("\nLinked List:\n");
+  printf("-> top: %p\n", mylist->head);
   printf("-> top: %d\n", mylist->head->value);
-  printf("-> tail: %p\n", mylist->tail->next);
+  printf("-> tail: %p\n", mylist->tail);
   printf("-> tail: %d\n", mylist->tail->value);
+
+  printf("Elements:\n");
+  nextNode = mylist->head;
+  while(nextNode != NULL) {
+    printf("%d\n", nextNode->value);
+    nextNode = nextNode->next;
+  }
 }
