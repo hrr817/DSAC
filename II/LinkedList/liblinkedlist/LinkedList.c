@@ -31,5 +31,6 @@ int push(int num, LinkedList *ptr) {
     ptr->tail->next = newNode;
     ptr->tail = newNode;
   }
+
   return 0;
 }
