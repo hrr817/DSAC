@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "./SinglyLinkedList.h"
 
 typedef struct _node {
@@ -64,4 +65,17 @@ int shift(SinglyLinkedList *ptr) {
   free(ptr->head);
   ptr->head = temp;
   return popped;
+}
+
+void traverse(SinglyLinkedList *ptr) {
+  Node *node = ptr->head;
+
+  while(node != NULL) {
+    printf("----------------------------------------\n");
+    printf("Address: %p\n", node);
+    printf("Value: %d\n", node->value);
+    printf("Next: %p\n", node->next);
+    printf("----------------------------------------\n");
+    node = node->next;
+  }
 }

@@ -11,17 +11,13 @@ int main() {
   }
 
   printf("\nLinked List:\n");
-  printf("-> top: %p\n", mylist->head);
+  printf("-> top address: %p\n", mylist->head);
   printf("-> top: %d\n", mylist->head->value);
-  printf("-> tail: %p\n", mylist->tail);
+  printf("-> tail address: %p\n", mylist->tail);
   printf("-> tail: %d\n", mylist->tail->value);
 
   printf("Elements:\n");
-  Node *nextNode = mylist->head;
-  while(nextNode != NULL) {
-    printf("%d\n", nextNode->value);
-    nextNode = nextNode->next;
-  }
+  traverse(mylist);
   printf("----------------------------\n");
   printf("Popping, %d...\n", pop(mylist));
   printf("Popping, %d...\n", pop(mylist));
@@ -29,15 +25,11 @@ int main() {
   printf("Shifting, %d...\n", shift(mylist));
 
   printf("\nLinked List:\n");
-  printf("-> top: %p\n", mylist->head);
+  printf("-> top address: %p\n", mylist->head);
   printf("-> top: %d\n", mylist->head->value);
-  printf("-> tail: %p\n", mylist->tail);
+  printf("-> tail address: %p\n", mylist->tail);
   printf("-> tail: %d\n", mylist->tail->value);
 
   printf("Elements:\n");
-  nextNode = mylist->head;
-  while(nextNode != NULL) {
-    printf("%d\n", nextNode->value);
-    nextNode = nextNode->next;
-  }
+  traverse(mylist);
 }
