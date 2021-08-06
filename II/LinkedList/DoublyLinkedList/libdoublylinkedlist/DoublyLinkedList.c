@@ -45,10 +45,13 @@ int pop(DoublyLinkedList *ptr) {
   int popped = ptr->tail->value;
 
   if(ptr->tail->prev == NULL) {
+    free(ptr->head);
     ptr->head = NULL;
     ptr->tail = NULL;
   } else {
-    ptr->tail = ptr->tail->prev;
+    Node *temp = ptr->tail->prev;
+    free(ptr->tail);
+    ptr->tail = temp;
     ptr->tail->next = NULL;
   }
 
