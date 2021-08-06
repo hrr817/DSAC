@@ -37,3 +37,9 @@ int pop(SinglyLinkedList *ptr);
  * @param ptr* where num will be pushed
  */
 int shift(SinglyLinkedList *ptr);
+
+/**
+ * Displays all the Nodes in given linked list
+ * @param ptr* where num will be pushed
+ */
+void traverse(SinglyLinkedList *ptr);

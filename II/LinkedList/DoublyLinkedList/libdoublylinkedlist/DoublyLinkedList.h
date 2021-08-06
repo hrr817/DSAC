@@ -17,7 +17,7 @@ typedef struct _doubly_linked_list DoublyLinkedList;
  * Creates a stack
  * @return LinkedList*
  */
-DoublyLinkedList* create_linkedlist();
+DoublyLinkedList* create_doubly_linked_list();
 
 /**
  * Pushes given number at the end of given linked list
@@ -38,3 +38,15 @@ int pop(DoublyLinkedList *ptr);
  * @param ptr* where num will be pushed
  */
 int shift(DoublyLinkedList *ptr);
+
+/**
+ * Displays all the Nodes in given linked list
+ * @param ptr* where num will be pushed
+ */
+void traverse(DoublyLinkedList *ptr);
+
+/**
+ * Displays all the Nodes from end to start in given linked list
+ * @param ptr* where num will be pushed
+ */
+void traverse_reverse(DoublyLinkedList *ptr);
